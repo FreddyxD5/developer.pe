@@ -1,0 +1,210 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es" class="w3-light-grey">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="{% static 'base/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'base/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+<link rel="stylesheet" href="{% static 'css/fonts/style.css' %}">
+<link href="{% static 'base/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+<link href="{% static 'base/css/creative.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/slider.css' %}" rel="stylesheet">
+<link href="{% static 'css/micss.css' %}" rel="stylesheet">
+<link rel="shortcut icon" href="{% static 'imagenes/favicon.ico' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'imagenes/favicon.ico' %}" type="image/x-icon"> 
+ 
+  <head>    
+    <title>Developer.pe - Programa hoy</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111610469-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111610469-1');
+    </script>
+    
+  </head>
+  <body id="page-top">
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Developer.pe</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> MENU
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Codigos Fuente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+            </li>
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                    <li class = "nav-item">
+                        <a href="{% url 'admin:index' %}" class="nav-link"><i class="fa fa-sign-in" ></i></a>
+                    </li>
+                {% endif %}
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="font">                
+              <div class="slider">
+                <ul >
+                  <li >
+                    <p class="text-uppercase text-white font">
+                    <strong class="font">"Programar es para todos y para todo"</strong>
+                    </p>
+                  </li>
+                  <li >
+                    <p class="text-uppercase text-white font">
+                      <strong class="font">"No importa lo que estudies, tú puedes programar!"</strong>
+                    </p>
+                  </li>
+                  <li >
+                    <p class="text-uppercase text-white font">
+                      <strong class="font">"¿Programar o ser programados?"</strong>
+                    </p>
+                  </li>
+                  <li >
+                    <p class="text-uppercase text-white font">
+                      <strong class="font">"No uses tecnología, creala!!"</strong>
+                    </p>
+                  </li>
+                </ul>                    
+              </div> 
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto ">
+            <p class="text-faded mb-5 w3-text-ligth-grey"><strong>Somos la primera generación que es capaz de tener una idea, verla en nuestras manos,ser capaces de pulsar un botón y ponerlo en manos de millones de personas 
+                      -  Drew Houston </strong></p>
+            <div>
+                <a class="btn btn-primary btn-xl js-scroll-trigger"  href="#about">Empieza Ahora!</a>    
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section_blue" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">¿ Quiénes somos ?</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Somos un grupo de informáticos autodidactas cuya filosofia es que todos podemos y debemos aprender a programar, nuestra finalidad es guiarte en tu camino en el mundo de la programación con tutoriales, post, guias y codigos fuente de ejemplo para que puedas lograr tu objetivo!</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ?view_as=public"  target="_blank">Explora nuestros tutoriales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+           <h1 class="section-heading">Post informativos para ti</h1>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-info text-primary mb-3 sr-icons"></i>
+              <a href="{% url 'post:listar_post_general' %}"><h3 class="mb-3">General</h3></a>
+              <p class="text-muted mb-0">Post variados con información de todo tipo.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-laptop text-primary mb-3 sr-icons"></i>
+              <a href=""><h3 class="mb-3">Tecnologia</h3></a>
+              <p class="text-muted mb-0">Novedades tecnologicas ya sean en celulares, tablets, gadgets, robots, etc.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-gamepad text-primary mb-3 sr-icons"></i>
+              <a href=""><h3 class="mb-3">Videojuegos</h3></a>
+              <p class="text-muted mb-0">Tenemos las mejores y mas actualizadas noticias sobre tus juegos favoritos.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-code text-primary mb-3 sr-icons"></i>
+              <a href=""><h3 class="mb-3">Programación</h3></a>
+              <p class="text-muted mb-0">Guias, tutoriales, consejos, links, y mucho mas del mundo de la programación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white" id="portfolio">
+      <div class="container text-center">
+        <h2 class="mb-4">Descarga gratis todos los codigos de nuestros tutoriales y algunos extras!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="https://github.com/openmindsan" target="_blank">Descarga ahora!</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Mantente informado con nosotros!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Nuevos tutoriales, post, novedades tecnologicas y muchas cosas más las puedes encontrar en nustras redes sociales!</p>
+          </div>
+        </div>
+        <div class="row">    
+            <div class="col-lg-4 ml-auto text-center">          
+              <a href="https://www.facebook.com/openmindsan/"  target="_blank" class="fa fa-facebook fa-3x mb-3"></a> 
+            </div> 
+            <div class="col-lg-4 ml-auto text-center">            
+                <a href="https://twitter.com/OpenYourMindSan?lang=es"  target="_blank" class="fa fa-twitter fa-3x mb-3"></a>
+            </div>
+            <div class="col-lg-4 ml-auto text-center">
+                <a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ?view_as=public"  target="_blank" class="fa fa-youtube fa-3x mb-3"></a>
+            </div>     
+          </div>        
+      </div>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="{% static 'base/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'base/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'base/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'base/vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'base/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Scripts personalizados -->
+    <script src="{% static 'base/js/creative.min.js' %}"></script>
+
+  </body>
+
+</html>

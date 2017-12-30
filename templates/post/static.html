@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% block static %}
+
+	<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/letra.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link href="{% static 'base/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+{% endblock %}
+{% block title %}<title>Static</title>{% endblock %}
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	
+	{% endblock %}
+</head>
+
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>

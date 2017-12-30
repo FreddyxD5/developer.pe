@@ -1,0 +1,64 @@
+{% extends 'post/static.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111610469-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111610469-1');
+    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+<link rel="stylesheet" href="{% static 'css/fonts/style.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<title>{{ post2.titulo }}</title>
+<div>
+
+	  <div class="w3-bar w3-left-align w3-large">
+	    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" </a>
+	    <a href="{% url 'post:index' %}" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+	    <a href="{% url 'post:listar_post_general' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Post</a>  
+	    <a href="{% url 'post:crear_post_general' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Nueva entrada</a>
+	  </div>
+	</div>
+</head>
+
+
+<body class="w3-light-grey">
+<div class="w3-content" style="max-width:1400px">
+	<div class="w3-card-4 w3-margin w3-white">
+		<div class="w3-container">
+			<h3>{{ post2.titulo }} ,<span class="w3-opacity">{{ post2.fecha }}</span></h3>
+			<p>{{ post2.nueva_entrada }}</p>	
+			<img src="{{ post2.imagen }}" class="img-responsive" />				
+			<p class="w3-tag w3-teal">{{ post2.genero.genero }}</p>			
+		</div>
+	</div>
+	
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top w3-content " style="max-width:1360px">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p class="w3-center">OpenYourMind</p>
+  <div class="w3-container w3-center">
+  	  <p>Encuentrame tambien: </p>
+	  <a href="https://www.facebook.com/openmindsan/"  target="_blank" class="icon-facebook2"></a>
+	  <a href="https://twitter.com/OpenYourMindSan?lang=es"  target="_blank" class="icon-twitter"></a>
+	  <a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ?view_as=public"  target="_blank" class="icon-youtube2"></a>
+  </div>  
+</footer>
+</body>
+</html>

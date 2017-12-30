@@ -1,0 +1,78 @@
+{% extends 'post/static.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+{% block title %}
+<title>Developer.pe</title>
+{% endblock %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<head class="w3-light-grey">
+	{% block head %}
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111610469-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111610469-1');
+    </script>
+	<div >
+	  <div class="w3-bar w3-left-align w3-large">
+	    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" </a>
+	    <a href="{% url 'index' %}" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+	    <a href="{% url 'post:listar_post_general' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Post</a>
+	    {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+	            <a href="{% url 'post:crear_post_general' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Nueva entrada</a>
+	        {% endif %}
+	    {% endif %}
+	  </div>
+	</div>
+	<header class="w3-container w3-center"> 
+	  <h1><b>Developer.pe</b></h1>
+	  <p>Bienvenidos<span class="w3-tag"></span></p>
+	</header>
+	{% endblock %}
+</head>
+<body class="w3-light-grey">
+{% block body %}
+	{% if post %}
+	{% for post in post %}
+		<div class="w3-content" style="max-width:1400px">	
+			<div class="w3-card-4 w3-margin w3-white">  
+			  <div class="w3-container">
+			    <h3>{{ post.titulo }} ,<span class="w3-opacity">{{ post.fecha }}</span></h3>
+			    </div>
+			    <div class="w3-container">		    
+			      <p>{{ post.nueva_entrada }}</p>
+			      <p class="w3-tag w3-teal">{{ post.genero.genero }}</p>  
+			      <div >
+			        <a href="{% url 'post:detail_post_general' post.id %}"><p><button class="w3-button w3-padding-large w3-light-grey w3-border"><b>READ MORE »</b></button></p></a>
+			      </div>		        
+			     </div>
+			  </div>
+			</div>
+		</div>
+	{% endfor %}
+	{% endif %}
+	<!-- Footer -->
+	<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+	  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+	  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+	  <p class="w3-center">OpenYourMind</p>
+	  <div class="w3-container w3-center">
+	  	  <p>Encuentrame tambien: </p>
+		  <a href="https://www.facebook.com/openmindsan/"  target="_blank" class="icon-facebook2"></a>
+		  <a href="https://twitter.com/OpenYourMindSan?lang=es"  target="_blank" class="icon-twitter"></a>
+		  <a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ?view_as=public"  target="_blank" class="icon-youtube2"></a>
+	  </div>  
+	</footer>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+.button_color{
+     background-color: coral;
+}
+.section_blue{
+    background-color:coral;
+}
+.icon_footer{
+    margin: 20px;
+}
+
+.font{
+    font-size: 40px;
+    
+}
+.logo{
+    margin-top: 30px;
+}
+.body{
+  background-image: url(static/assets/img/backgrounds/1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+
+}
+
